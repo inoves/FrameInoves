@@ -28,8 +28,8 @@ Modules
 	- Localização dos ficheiros MCV, no formato de modulos
 		- Para activar os modulos deve-se chamar Frame_Router::addModule('admin'); no ficheiro Config/Routers.php
 			- Em cada controller são executados automaticamente as funçoes que podem ser sobrecarregadas
-					- beforeFilter
-					- afterFilter
+					- beforeRun
+					- afterRun
 
 Plugin
 	- Pasta com os ficheiros plugins, ver documentação sobre plugins
