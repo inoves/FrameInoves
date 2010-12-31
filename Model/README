@@ -1,0 +1,6 @@
+Para sua camada de modelo podes usar as bibliotecas para implementar seus modelos:
+
+Propel<http://www.propelorm.org/>
+Doctrine<http://www.doctrine-project.org/>
+Zend_DB_Table<http://framework.zend.com/manual/en/zend.db.table.html>
+ADOdb_ActiveRecord<http://phplens.com/lens/adodb/docs-active-record.htm>

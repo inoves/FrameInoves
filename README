@@ -1,0 +1,72 @@
+﻿
+Cache
+	- Pasta onde contém os ficheiros cache gerados pelo sistema
+	
+Config
+	- Localização dos ficheiros de configuração
+		- ver bootstrap.php
+Data
+	- Pasta contém dados como por exemplo xml
+	
+Docs
+	- Ficheiros sobre o projecto, sql, pdf, imagens, etc...
+
+Frame
+	- Pasta onde contem os ficheiros core da framework
+
+Lib
+	- Ficheiros criados pelo desenvolvedor e que são usados no sistema
+		- senão seguir a nomenclatura "autoloader"... então deve usar require/include apra adicionar vossos ficheiros
+		
+Logs
+	- Ficheiros logs
+
+Model
+	- Localização dos ficheiros da camada de modelo utilizados por todos os modulos
+
+Modules
+	- Localização dos ficheiros MCV, no formato de modulos
+		- Para activar os modulos deve-se chamar Frame_Router::addModule('admin'); no ficheiro Config/Routers.php
+			- Em cada controller são executados automaticamente as funçoes que podem ser sobrecarregadas
+					- beforeFilter
+					- afterFilter
+
+Plugin
+	- Pasta com os ficheiros plugins, ver documentação sobre plugins
+		- metodos que automaticamente são executados e que podem ser sobrecarregados pelos plugins:
+			- beforeRun() //Executado antes da action
+			- afterRun() //Executado depois da action
+			- beforeRender(&$objectRender); //Executado antes do Render, pode ser utilizado para carregar vars a camada render
+			- afterRender(&$objectRender); //Executado depois do Render, pode ser utilizado para testar a saida por exemplo a nivel de segurança, etc..
+			- beforeRunModuleApp
+			- afterRunModuleApp
+
+Public
+	- Pasta exposta na web, contem js, styles e imagens
+	Cache/View/HTML/...
+		- Pasta contém os ficheiros de cache lazy html
+	index.php
+		- um ponto importante a ressaltar é a criação do FRAME_RACK::RUN, que esta dentro de um try/catch
+	
+Zend
+	- Componentes Zend utilizados no sistema
+
+
+
+
+Geralmente um projecto compartilha a camada de modelo em toda a aplicação, por este motivo faz sentido que a pasta com os modelos esteja centralizado, fora da estrutura MCV modular
+Para definir um modelo centralizado:
+	dentro da pasta Model
+		class Model_NomeModelo-> localizacao: FRAME_PATH/Model/NomeModel.php
+	
+	Modelo personalizado dentro do modulo
+		class App_Model_NomeModelo-> localizacao: FRAME_PATH/Modules/App/Model/NomeModel.php
+	
+	
+
+
+
+
+
+
+

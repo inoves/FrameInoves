@@ -1,0 +1,127 @@
+/* --- main layout --- */
+	
+	* { margin: 0; padding: 0; }
+	
+	body { font-family:Tahoma, Geneva, sans-serif; font-size:medium; color:#9b9b9b; background:#212121; padding:0; margin:0;}
+	
+	a img,:link img,:visited img,fieldset {border:none;}
+	img {vertical-align:top;}
+	
+	.clear {clear:both}
+	.nowrp {white-space:nowrap;}
+	.container {width:100%; overflow:hidden;}
+
+/* --- END main layout --- */
+
+/* --- header --- */
+
+	#header { background:#ffffff url(/imagesMobile/header-tail.gif) 0 0 repeat-x; font-size:1.125em; padding:0 20px;}
+	
+	#logo {padding-top:22px; height:120px;}
+	#logo img {padding-bottom:9px;}
+	
+	.home-tab {display:block; width:75px; color:#fff; margin-bottom:26px;}
+	
+	#slogan {height:159px; background:url(/imagesMobile/slogan-tail-bg.gif) top repeat-x;}
+	#slogan .right-bg {background:url(/imagesMobile/slogan-right-bg.jpg) top right no-repeat;}
+	#slogan .left-bg {background:url(/imagesMobile/slogan-left-bg.gif) top left no-repeat; padding:33px 0 0 16px; height:126px;}
+	
+	#breadcrumb {background:url(/imagesMobile/title-tail-bg.gif) left top repeat-x; color:#5e5e5e; margin-top:11px;}
+	#breadcrumb .right-bg {background:url(/imagesMobile/title-right-bg.gif) top right no-repeat;}
+	#breadcrumb .left-bg {background:url(/imagesMobile/title-left-bg.gif) top left no-repeat; padding:8px 0 9px 15px;}
+	#breadcrumb a {color:#5e5e5e; text-decoration:none; background:url(/imagesMobile/marker1.gif) no-repeat right 9px; padding-right:13px;}
+
+/* --- END header --- */
+
+/* --- content --- */
+
+	#content {font-size:1.125em; background:#fff; line-height:1em;}
+	.min-width {padding: 27px 20px 30px 20px; min-width:200px;}
+
+	li {list-style:none; margin-bottom:5px; clear:both; color:#000000; background:url(/imagesMobile/marker4.gif) no-repeat 0 4px; padding-left:12px; text-transform:uppercase;}
+	li a {color:#3e3e3e;}
+	a {color:#1696d6;}
+	em {color:#5e5e5e;}
+	
+	#navmenu {text-align:center;}
+	#navmenu li {background:none; margin-bottom:12px; padding:0;}
+	
+/* --- END content --- */
+
+/* --- footer --- */
+	
+	#footer {height:95px; padding-left:20px; background:url(/imagesMobile/footer-tail.gif) 0 0 repeat-x; color:#404040; font-size:1.125em;}
+	#footer p { padding:32px 0 5px 0; font-size:0.944em;}
+	#footer p a {color:#6c6c6c; text-decoration:none;}
+	#footer .home-tab {color:#3d372f; margin-bottom:0;}
+
+/* --- END footer --- */
+
+/* --- Other --- */
+	
+	.f-left {float:left;}
+	.f-right {float:right;}
+	.taright {text-align:right;}
+	.margin1 {margin-top:30px;}
+	.margin2 {margin-top:20px;}
+	.imgindent {float:left; margin-right:14px;}
+	.text2 {color:#1696d6;}
+	
+	h2 {color:#3e3e3e; font-size:1.333em; font-weight:normal; letter-spacing:-1px; margin-bottom:20px;}
+	h4 {color:#059fb4; font-weight:normal; margin-bottom:2px;}
+	p {padding-top:15px;}
+	
+	.link, .link2 {padding:10px 0 0 0;}
+	.link2 {padding-top:20px;}
+	.link2 a {background:url(/imagesMobile/link-bg.jpg) no-repeat 0 0; color:#fff; display:block; width:111px; padding:5px 0 6px 25px; text-decoration:none; text-transform:uppercase;}
+	.link a { text-transform:uppercase;}
+	
+	.title {background:url(/imagesMobile/title-tail-bg.gif) top repeat-x;}
+	.title .right-bg {background:url(/imagesMobile/title-right-bg.gif) top right no-repeat;}
+	.title .left-bg {background:url(/imagesMobile/title-left-bg.gif) top left no-repeat; padding:8px 0 5px 18px;}
+	
+	.list li {background:url(/imagesMobile/marker1.gif) no-repeat 0 4px; padding-left:19px; margin-bottom:13px; font-size:0.944em; text-transform:uppercase;}
+	.list li a {color:#3e3e3e;}
+	
+	#contact {padding:16px 0 0 0;}
+	
+	#ContactForm {font-size:0.944em; color:#5e5e5e;}
+	#ContactForm input, #ContactForm textarea {width:235px; height:19px; border:1px solid #7d7d7d; font-family:Tahoma, Geneva, sans-serif; font-size:1em; margin-bottom:5px;}
+	#ContactForm textarea {height:136px;}
+	#ContactForm .taright {width:237px;}
+	#ContactForm button {background:url(/imagesMobile/button-bg2.jpg) no-repeat 0 0; width:89px; border:none; font-size:1.059em; color:#fff; text-transform:uppercase; padding:2px 0 2px 18px; height:28px;}
+	
+/* --- END Other --- */
+
+/* --- boxes --- */
+
+	.box1 {background:url(/imagesMobile/box1-tail-top.gif) top repeat-x #3dace2; color:#fff;}
+	.box1 .tail-bottom {background:url(/imagesMobile/box1-tail-bottom.gif) bottom repeat-x;}
+	.box1 .corner-right-bottom {background:url(/imagesMobile/box1-corner-right-bottom.gif) right bottom no-repeat;}
+	.box1 .corner-left-bottom {background:url(/imagesMobile/box1-corner-left-bottom.gif) left bottom no-repeat;}
+	.box1 .corner-right-top {background:url(/imagesMobile/box1-corner-right-top.gif) right top no-repeat;}
+	.box1 .corner-left-top {background:url(/imagesMobile/box1-corner-left-top.gif) left top no-repeat;}
+	.box1 .top-bg {background:url(/imagesMobile/box1-top-bg.jpg) center top no-repeat;}
+	.box1 .bottom-bg {background:url(/imagesMobile/box1-bottom-bg.gif) center bottom no-repeat; min-height:200px;}
+	.box1 .indent {padding:73px 20px 25px 20px;}
+	.box1 a {color:#046594;}
+	.box1 .link a {background:url(/imagesMobile/marker2.gif) no-repeat 0 7px; padding-left:12px;}
+	
+	.box2 {background:url(/imagesMobile/box2-tail-top.gif) top repeat-x #ea9c19; color:#fff;}
+	.box2 .tail-bottom {background:url(/imagesMobile/box2-tail-bottom.gif) bottom repeat-x;}
+	.box2 .corner-right-bottom {background:url(/imagesMobile/box2-corner-right-bottom.gif) right bottom no-repeat;}
+	.box2 .corner-left-bottom {background:url(/imagesMobile/box2-corner-left-bottom.gif) left bottom no-repeat;}
+	.box2 .corner-right-top {background:url(/imagesMobile/box2-corner-right-top.gif) right top no-repeat;}
+	.box2 .corner-left-top {background:url(/imagesMobile/box2-corner-left-top.gif) left top no-repeat;}
+	.box2 .top-bg {background:url(/imagesMobile/box2-top-bg.jpg) center top no-repeat;}
+	.box2 .bottom-bg {background:url(/imagesMobile/box2-bottom-bg.gif) center bottom no-repeat; min-height:200px;}
+	.box2 .indent {padding:73px 20px 25px 20px;}
+	.box2 a {color:#af5701;}
+	.box2 .link a {background:url(/imagesMobile/marker3.gif) no-repeat 0 7px; padding-left:12px;}
+	
+	.box3 {background:#f9f9f9 url(/imagesMobile/box3-corner-right-bottom.gif) right bottom no-repeat;}
+	.box3 .corner-left-bottom {background:url(/imagesMobile/box3-corner-left-bottom.gif) left bottom no-repeat;}
+	.box3 .indent {padding:10px 20px 20px 16px;}
+
+
+/* --- END boxes --- */

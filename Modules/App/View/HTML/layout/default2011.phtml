@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<?php $this->partial('elements/headers/htmlHeader.phtml') ?>
+
+    <body <?php if(Frame_URS::$actionName=='index' && Frame_URS::$controllerName=='Index' ) echo 'class="home"'; ?>>
+
+		<!-- top menu start -->
+		<?php $this->partial('elements/headers/header.phtml') ?>
+		<!-- top menu end -->
+
+
+		<!-- content start -->
+		<div class="content">
+			<div class="middle">
+				<!--action start-->
+
+				<?php echo $this->flash() ?>
+
+				<? $this->contentAction() ?>
+
+				<!--action end-->
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!-- content end -->
+
+
+
+		<!-- footer start -->
+		<?php $this->partial('elements/footers/footerSite.phtml') ?>
+		<!-- footer end -->
+
+
+	</body>
+</html>

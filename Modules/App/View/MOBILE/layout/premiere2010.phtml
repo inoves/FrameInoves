@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta http-equiv="cache-control" content="max-age=200" />
+<link href="/css/styleMobile.css" media="handheld, screen" rel="stylesheet" type="text/css" />
+<title>Mobile Example</title>
+</head>
+<body>
+<div class="mainwrapper">
+	<div id="header">
+		<div class="right-bg">
+			<div id="logo">
+				<a class="home-tab" href="/format/mobile/">Home</a>
+				<a href="index.html"><img height="50" width="270" alt="logo" src="/imagesMobile/logo.jpg"/></a>
+			</div>
+			<div id="slogan">
+				<div class="right-bg">
+					<div class="left-bg">
+						<img alt="" src="/imagesMobile/slogan.gif" /><br />
+					</div>
+				</div>
+			</div>
+			<div id="breadcrumb">
+				<div class="right-bg">
+					<div class="left-bg">
+						<a href="#">Home Page</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		
+    	<?php echo $this->flash() ?>
+		<? $this->contentAction() ?>	
+		
+	</div>
+	<div id="footer">
+		<a class="home-tab" href="/format/mobile/">Home</a>
+		<p>Example (c) 2009 <a href="privacy.html">Privacy policy</a></p>
+	</div>
+</div>
+</body>
+</html>
