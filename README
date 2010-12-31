@@ -63,9 +63,11 @@ Para definir um modelo centralizado:
 		class App_Model_NomeModelo-> localizacao: FRAME_PATH/Modules/App/Model/NomeModel.php
 	
 	
+//altera header e termina app
+Frame_Rack::redirect('enderecoUrl', $exitIfTrue);
 
-
-
+//redireciona execução da aplicacao, sem terminar aplicacao
+Frame_Rack::forward($actionName, $controllerName=null, $moduleName=null);
 
 
 
