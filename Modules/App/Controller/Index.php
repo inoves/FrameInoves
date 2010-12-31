@@ -1,6 +1,4 @@
 <?php
-//@uses
-include_once 'lib/helper/helperVideos.php';
 /**
 * Index Controller - IDE
 *
