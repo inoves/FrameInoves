@@ -4,7 +4,10 @@ Podes usar:
 	PhpUnit
 		- http://www.phpunit.de/manual/current/en/index.html
 		
-Tambem podes usar Frame_Test para testar seus controllers e models.
+Tambám podes usar Frame_Test para testar seus controllers e models.
+
+
+TODO: terminar os testes sobre o core.
 
 
 Uma dica é usar o phpunit/Frame_Test para testar os resultados do aplicativo nos formatos json e xml.
