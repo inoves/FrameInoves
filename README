@@ -30,6 +30,9 @@ Modules
 			- Em cada controller são executados automaticamente as funçoes que podem ser sobrecarregadas
 					- beforeRun
 					- afterRun
+	- a camada VIEW trabalha com mais de um formato por modulo. Por exemplo:
+		- no modulo app podes ter uma camada view para mostrar os dados dos controller via HTML,JSON, MOBILE, etc...
+		
 
 Plugin
 	- Pasta com os ficheiros plugins, ver documentação sobre plugins
@@ -40,6 +43,7 @@ Plugin
 			- afterRender(&$objectRender); //Executado depois do Render, pode ser utilizado para testar a saida por exemplo a nivel de segurança, etc..
 			- beforeRunModuleApp
 			- afterRunModuleApp
+	- Proximo passo é transportar as features de outro frameworkInoves que trabalha somente num modelo de plugins/MCV
 
 Public
 	- Pasta exposta na web, contem js, styles e imagens
@@ -69,6 +73,8 @@ Frame_Rack::redirect('enderecoUrl', $exitIfTrue);
 //redireciona execução da aplicacao, sem terminar aplicacao
 Frame_Rack::forward($actionName, $controllerName=null, $moduleName=null);
 
+
+---
 
 
 
