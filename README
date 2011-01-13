@@ -1,22 +1,24 @@
-﻿
+﻿Estrutura das pastas:
+
 Cache
 	- Pasta onde contém os ficheiros cache gerados pelo sistema
 	
 Config
 	- Localização dos ficheiros de configuração
-		- ver bootstrap.php
+		- bootstrap.php inicializa todas as aberturar de ficheiros para Frame_Config
+		
 Data
-	- Pasta contém dados como por exemplo xml
+	- Pasta contem dados, como por exemplo xml
 	
 Docs
-	- Ficheiros sobre o projecto, sql, pdf, imagens, etc...
+	- Documentos sobre o sistema, sql, pdf, imagens, espeficicacoes etc...
 
 Frame
 	- Pasta onde contem os ficheiros core da framework
-
+	
 Lib
-	- Ficheiros criados pelo desenvolvedor e que são usados no sistema
-		- senão seguir a nomenclatura "autoloader"... então deve usar require/include apra adicionar vossos ficheiros
+	- Bibliotecas adicionadas pelo desenvolvedor
+		- senão seguir a nomenclatura "autoloader"... então deve usar require/include apra adicionar vossos ficheiros, ou registar um autoloder
 		
 Logs
 	- Ficheiros logs
@@ -26,59 +28,73 @@ Model
 
 Modules
 	- Localização dos ficheiros MCV, no formato de modulos
-		- Para activar os modulos deve-se chamar Frame_Router::addModule('admin'); no ficheiro Config/Routers.php
-			- Em cada controller são executados automaticamente as funçoes que podem ser sobrecarregadas
-					- beforeRun
-					- afterRun
-	- a camada VIEW trabalha com mais de um formato por modulo. Por exemplo:
-		- no modulo app podes ter uma camada view para mostrar os dados dos controller via HTML,JSON, MOBILE, etc...
-		
+		- Para activar os modulos deve-se adicionar Frame_Router::addModule('nomedomodulo'); no ficheiro Config/Routers.php
+			- Filtros que são executados nos modules/controller
+					- beforeFilter
+					- afterFilter
 
 Plugin
-	- Pasta com os ficheiros plugins, ver documentação sobre plugins
-		- metodos que automaticamente são executados e que podem ser sobrecarregados pelos plugins:
-			- beforeRun() //Executado antes da action
-			- afterRun() //Executado depois da action
+		- metodos que automaticamente são executados
+			- beforeRun() //Executado antes de todas as action
+			- afterRun() //Executado depois de todas as action
 			- beforeRender(&$objectRender); //Executado antes do Render, pode ser utilizado para carregar vars a camada render
 			- afterRender(&$objectRender); //Executado depois do Render, pode ser utilizado para testar a saida por exemplo a nivel de segurança, etc..
-			- beforeRunModuleApp
+			- beforeRunModuleApp //executado antes da action do ModuleApp especificado
 			- afterRunModuleApp
-	- Proximo passo é transportar as features de outro frameworkInoves que trabalha somente num modelo de plugins/MCV
 
 Public
 	- Pasta exposta na web, contem js, styles e imagens
 	Cache/View/HTML/...
 		- Pasta contém os ficheiros de cache lazy html
 	index.php
-		- um ponto importante a ressaltar é a criação do FRAME_RACK::RUN, que esta dentro de um try/catch
+		- ficheiro bootstrap serve para minimizar ao maximo a necessidade de alterar o ficheiro index.
 	
 Zend
 	- Componentes Zend utilizados no sistema
 
 
+-----------------
 
+Modelos
 
-Geralmente um projecto compartilha a camada de modelo em toda a aplicação, por este motivo faz sentido que a pasta com os modelos esteja centralizado, fora da estrutura MCV modular
-Para definir um modelo centralizado:
+Geralmente um projecto compartilha a camada modelo em toda a aplicação, por este motivo faz sentido que os modelos estejam centralizados.
+Como nossa Framework tem uma estrutura MCV modular, podes definir suas classes modelos de duas maneiras.
+Para definir um modelo centralizado, com um escopo global:
 	dentro da pasta Model
 		class Model_NomeModelo-> localizacao: FRAME_PATH/Model/NomeModel.php
 	
-	Modelo personalizado dentro do modulo
+	Modelo com um escopo modular
 		class App_Model_NomeModelo-> localizacao: FRAME_PATH/Modules/App/Model/NomeModel.php
+
+-----------------
+
+
+View
+
+Podes ter varios formatos de saida para os mesmos dados processados.
+    Por exemplo, por omissão, tens o formato HTML, mas podes criar formatos especificos para MOBILE, JSON, XML, etc... 
+    Para isso tens que adicionar os formatos que vosso sistema suporta no ficheiro routes.php:
+        Frame_Router::addFormat('json'); //adiciona acesso aos dados pelo url /format/json/module/controller/action
+        Frame_Router::addFormat('mobile'); //adiciona acesso aos dados pelo url /format/mobile/controller/action
+	    Frame_Router::addFormat('xml');
 	
 	
-//altera header e termina app
-Frame_Rack::redirect('enderecoUrl', $exitIfTrue);
+Podes criar rotas que atendem a um determido formato:
 
-//redireciona execução da aplicacao, sem terminar aplicacao
-Frame_Rack::forward($actionName, $controllerName=null, $moduleName=null);
-
-
----
-
-Qualquer duvida ou ajuda que precisares entre em contacto: steven.koch@sapo.pt
-Caso deseje mais detalhes sobre o sistema entre em contacto tambem! 
+//Por exemplo esta rota: /mobile/module/controller/action ou se /mobile/controller/action
+Frame_Router::set('/(?:mobile)\/(?:.*)/', array('path'=>'${1}','format'=>'mobile'));
 
 
-thnks!
+//podes tambem configurar vosso servidor web para que redireccione chamadas para um formato especifico vindo de um subdominio
+//funciona com as chamadas mobile.meusite.com/controller/action -> ira mostrar o formato mobile do sistema
+$HTTP["host"] =~ "m.meusite.com" {
+    url.rewrite-once = ( 
+        "^/(Cache|images|imagesMobile|css|errors|js)/.*" => "$0",
+        "^.+\.php.*" => "$0",
+		#oque estou dizendo é para injectar o formato para pedidos a este dominio
+        ".*" => "/index.php?q=/format/mobile/$0"
+    )
+}
+
+
 
